@@ -199,7 +199,7 @@ rng_Next(rngObject * s, PyObject * args)
     }
 
 if (_rng_debug)
-fprintf(stderr, "*** rng_Next(%p) %p[%d]\t", s, MPW_DATA(z), MPW_SIZE(z)), mpfprintln(stderr, MPW_SIZE(z), MPW_DATA(z));
+fprintf(stderr, "*** rng_Next(%p) %p[%lu]\t", s, MPW_DATA(z), (unsigned long)(MPW_SIZE(z))), mpfprintln(stderr, MPW_SIZE(z), MPW_DATA(z));
 
     return (PyObject *)z;
 }
@@ -236,7 +236,7 @@ rng_Prime(rngObject * s, PyObject * args)
 
     z = mpw_FromMPW(b->size, b->modl, 1);
 if (z != NULL && _rng_debug)
-fprintf(stderr, "*** rng_Prime(%p) %p[%d]\t", s, MPW_DATA(z), MPW_SIZE(z)), mpfprintln(stderr, MPW_SIZE(z), MPW_DATA(z));
+fprintf(stderr, "*** rng_Prime(%p) %p[%lu]\t", s, MPW_DATA(z), (unsigned long)(MPW_SIZE(z))), mpfprintln(stderr, MPW_SIZE(z), MPW_DATA(z));
 
     return (PyObject *)z;
 }
